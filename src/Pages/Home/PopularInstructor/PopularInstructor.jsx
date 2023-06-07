@@ -36,7 +36,7 @@ const PopularInstructor = () => {
                 }
             </div>
             <div className="flex flex-col justify-center items-center mt-10">
-                <Link className="mb-20">
+                <Link className="mb-20" to='/instructors'>
                     <button className="btn btn-outline border-0 border-b-4 mt-4 btn-neutral text-black">View All Instructor</button>
                 </Link>
             </div>

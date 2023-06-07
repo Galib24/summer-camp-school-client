@@ -20,7 +20,7 @@ const FirstBlogSection = () => {
                <strong> <p>June 18, 2023</p></strong>
                <strong className="font-bold"> <p>We want every one should proper use and fun summer time!</p></strong>
            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, nobis voluptate cumque dolorum provident numquam modi maxime asperiores in suscipit dolorem quisquam nulla laborum architecto! Quasi soluta vitae nulla nostrum asperiores dicta quod? Eligendi vel adipisci sit corrupti consectetur in soluta, eaque quisquam, vero corporis aperiam aliquid repellat est quas.</p>
-           <button className="btn btn-outline border-0 border-b-4 mt-4 btn-primary text-black">Order Now</button>
+           <button className="btn btn-outline border-0 border-b-4 mt-4 btn-primary text-black">Show More</button>
             </div>
           </div>
         </div>
