@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
+import FirstBlogSection from "../FirstBlogSection/FirstBlogSection";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
 import PopularMenu from "../Popularmenu/PopularMenu";
 
@@ -13,6 +14,7 @@ const Home = () => {
            <Category></Category>
            <PopularMenu></PopularMenu>
            <PopularInstructor></PopularInstructor>
+           <FirstBlogSection></FirstBlogSection>
         </div>
     );
 };
