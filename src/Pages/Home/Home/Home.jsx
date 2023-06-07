@@ -3,6 +3,7 @@ import Category from "../Category/Category";
 import FirstBlogSection from "../FirstBlogSection/FirstBlogSection";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
 import PopularMenu from "../Popularmenu/PopularMenu";
+import Reviews from "../Reviews/Reviews";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
            <PopularMenu></PopularMenu>
            <PopularInstructor></PopularInstructor>
            <FirstBlogSection></FirstBlogSection>
+           <Reviews></Reviews>
         </div>
     );
 };
