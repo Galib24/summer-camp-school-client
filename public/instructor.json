@@ -4,9 +4,12 @@
       "name": "John Doe",
       "email": "johndoe@example.com",
       "image": "https://i.ibb.co/RSdqNkt/popular1.jpg",
+      "instructor_img": "https://i.ibb.co/18xxz2m/instructor-pp-7up.png",
       "class_number": 5,
       "students_enrolled": 25,
       "category": "popular"
+      
+      
     },
     {
       "_id": "7f32d52a9e3c1e88a123f4b5",
@@ -22,9 +25,11 @@
       "name": "Mike Johnson",
       "email": "mikejohnson@example.com",
       "image": "https://i.ibb.co/mH734kP/popular2.jpg",
+      "instructor_img": "https://i.ibb.co/jh4fLmw/instructor-pp-6up.png",
       "class_number": 7,
       "students_enrolled": 32,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "Outdoor Bootcamp"
     },
     {
       "_id": "98a2c1b3e6f45d7a8c79b24d",
@@ -40,9 +45,11 @@
       "name": "David Anderson",
       "email": "davidanderson@example.com",
       "image": "https://i.ibb.co/Bj1qQds/popular3.jpg",
+      "instructor_img": "https://i.ibb.co/R3nNC7M/instructor-pp-5.png",
       "class_number": 6,
       "students_enrolled": 52,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "Cardiac Conditioning"
     },
     {
       "_id": "b2d3e4f5a6c7b8d9e0f1a2b",
@@ -58,9 +65,11 @@
       "name": "Daniel Brown",
       "email": "danielbrown@example.com",
       "image": "https://i.ibb.co/J2Y6vYs/popular4.jpg",
+      "instructor_img": "https://i.ibb.co/jHkbdRt/instructor-pp-4up.png",
       "class_number": 8,
       "students_enrolled": 36,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "Pilates"
     },
     {
       "_id": "9e8d7c6b5a4f3e2d1c0b9a8",
@@ -145,12 +154,14 @@
     },
     {
       "_id": "5c6d7e8f9a0b1c2d3e4f5a6",
-      "name": "William Martinez",
+      "name": "Anastacia ",
       "email": "williammartinez@example.com",
       "image": "https://i.ibb.co/GnFw43F/popular5.jpg",
+      "instructor_img": "https://i.ibb.co/YdshqhD/instructor-pp-3up.png",
       "class_number": 4,
       "students_enrolled": 42,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "Dance Fitness"
     },
     {
       "_id": "7d8e9f0a1b2c3d4e5f6a7b8",
@@ -166,18 +177,22 @@
       "name": "Liam Davis",
       "email": "liamdavis@example.com",
       "image": "https://i.ibb.co/3mX6J9Y/popular6.jpg",
+      "instructor_img": "https://i.ibb.co/fpgmN5q/instructor-pp-2up.png",
       "class_number": 5,
       "students_enrolled": 54,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "HIIT Workout"
     },
     {
       "_id": "9e0f1a2b3c4d5e9f7a8b9z0",
       "name": "Liamai evisa",
       "email": "liamdavis@example.com",
       "image": "https://i.ibb.co/X7NJTjD/popular7.jpg",
+      "instructor_img": "https://i.ibb.co/W6Zgwyv/instructor-pp-1up.png",
       "class_number": 5,
       "students_enrolled": 74,
-      "category": "popular"
+      "category": "popular",
+      "class_name": "Vinyasa Yoga"
     },
     {
       "_id": "1a2b3c4d5e6f7a8b9c0d1e2",
