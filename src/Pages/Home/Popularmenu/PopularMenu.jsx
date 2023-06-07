@@ -35,7 +35,7 @@ const PopularMenu = () => {
                 </div>
                 <div className="flex flex-col justify-center items-center mt-10">
                     <Link className="mb-20">
-                        <button className="btn btn-outline border-0 border-b-4 mt-4 btn-neutral text-black">View Full Menu</button>
+                        <button className="btn btn-outline border-0 border-b-4 mt-4 btn-neutral text-black">View All classes </button>
                     </Link>
                 </div>
             </>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import PopularInstructorCard from "../../PopularInstructorCard/PopularInstructorCard";
+import { Link } from "react-router-dom"
 
 const PopularInstructor = () => {
 
@@ -33,6 +34,11 @@ const PopularInstructor = () => {
                         popularInstructor={popularInstructor}
                     ></PopularInstructorCard>)
                 }
+            </div>
+            <div className="flex flex-col justify-center items-center mt-10">
+                <Link className="mb-20">
+                    <button className="btn btn-outline border-0 border-b-4 mt-4 btn-neutral text-black">View All Instructor</button>
+                </Link>
             </div>
         </div>
     );
