@@ -30,9 +30,9 @@ const Classes = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-24 ml-10  mb-28">
                 {
-                    classes.map(Ct => <ClassCard
-                        key={Ct._id}
-                        Ct={Ct}
+                    classes.map(item => <ClassCard
+                        key={item._id}
+                        item={item}
                     ></ClassCard>)
                 }
             </div>

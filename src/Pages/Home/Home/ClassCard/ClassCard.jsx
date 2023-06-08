@@ -1,7 +1,54 @@
 import { motion, useScroll } from "framer-motion"
+import { useContext } from "react";
+import { AuthContext } from "../../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const ClassCard = ({ Ct }) => {
-    const { class_name, image } = Ct
+const ClassCard = ({ item }) => {
+    const {price, class_name, class_number, name, rating, seat, students_enrolled, image, _id } = item;
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleAddToCart = item => {
+        console.log(item);
+        if (user && user?.email) {
+            const enrolledItem = { itemId: _id,price, name, rating, seat, students_enrolled, class_name, class_number }
+            fetch('http://localhost:5000/enrolled', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(enrolledItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'You Added Enrolled Item',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Please login to enrolled the item',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            })
+        }
+    }
 
     const { scrollYProgress } = useScroll()
     return (
@@ -28,7 +75,7 @@ const ClassCard = ({ Ct }) => {
                     <h2 className="card-title">{class_name}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions justify-end">
-                        <button className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
+                        <button onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
                     </div>
                 </div>
             </div>

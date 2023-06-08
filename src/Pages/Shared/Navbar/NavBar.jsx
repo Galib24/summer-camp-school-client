@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-
-
+import { FaBox } from 'react-icons/fa';
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
 
@@ -47,6 +46,19 @@ const NavBar = () => {
                 </div> */}
 
                 <div className="navbar-end">
+
+
+                    <div className="mr-8">
+                        <li>
+                            <Link>
+                                <button className="btn">
+                                  <FaBox></FaBox>
+                                    <div className="badge badge-error">+99</div>
+                                </button>
+                            </Link>
+                        </li>
+                    </div>
+
                     {
                         user ? <>
                             <p className="mr-6 font-bold">{user?.displayName}</p>
