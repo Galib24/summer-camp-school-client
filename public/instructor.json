@@ -8,7 +8,10 @@
       "class_number": 5,
       "students_enrolled": 25,
       "category": "popular",
-      "class_name": "Zumba"
+      "class_name": "Zumba",
+      "rating": 4.2,
+      "seat": 50
+      
       
       
     },
@@ -21,7 +24,9 @@
       "class_number": 3,
       "students_enrolled": 18,
       "category": "normal",
-      "class_name": "Spin Cycling"
+      "class_name": "Spin Cycling",
+      "rating": 4.1,
+      "seat": 36
     },
     {
       "_id": "3d22e4d7a9c87b5e6f4d1a2c",
@@ -32,7 +37,9 @@
       "class_number": 7,
       "students_enrolled": 32,
       "category": "popular",
-      "class_name": "Outdoor Bootcamp"
+      "class_name": "Outdoor Bootcamp",
+      "rating": 4.5,
+      "seat": 47
     },
     {
       "_id": "98a2c1b3e6f45d7a8c79b24d",
@@ -43,7 +50,9 @@
       "class_number": 4,
       "students_enrolled": 22,
       "category": "medium",
-      "class_name": "Barre"
+      "class_name": "Barre",
+      "rating": 4,
+      "seat": 62
     },
     {
       "_id": "6e7f8d9c5b1a2d3e4f7a8c9b",
@@ -54,7 +63,9 @@
       "class_number": 6,
       "students_enrolled": 52,
       "category": "popular",
-      "class_name": "Cardiac Conditioning"
+      "class_name": "Cardiac Conditioning",
+      "rating": 4.8,
+      "seat": 0
     },
     {
       "_id": "b2d3e4f5a6c7b8d9e0f1N2b",
@@ -65,7 +76,9 @@
       "class_number": 2,
       "students_enrolled": 12,
       "category": "normal",
-      "class_name": "Kickboxing"
+      "class_name": "Kickboxing",
+      "rating": 3.6,
+      "seat": 48
     },
     {
       "_id": "5c6b7d8e9f1a2b3c4d5e6f7",
@@ -76,7 +89,9 @@
       "class_number": 8,
       "students_enrolled": 36,
       "category": "popular",
-      "class_name": "Pilates"
+      "class_name": "Pilates",
+      "rating": 4.5,
+      "seat": 0
     },
     {
       "_id": "9e8d7c6b5a4f3e2d1c0b9a8",
@@ -87,7 +102,9 @@
       "class_number": 3,
       "students_enrolled": 15,
       "category": "normal",
-      "class_name": "Powerlifting"
+      "class_name": "Powerlifting",
+      "rating": 3.5,
+      "seat": 35
     },
     {
       "_id": "2b3c4d5e6f7a8b9c0d1e2f3",
@@ -98,7 +115,9 @@
       "class_number": 5,
       "students_enrolled": 24,
       "category": "medium",
-      "class_name": "hammer through"
+      "class_name": "hammer through",
+      "rating": 3.8,
+      "seat": 22
     },
     {
       "_id": "1a2b3L4d5e6f7a8b9c0d1e2",
@@ -109,7 +128,9 @@
       "class_number": 7,
       "students_enrolled": 8,
       "category": "ok",
-      "class_name": "Aerial Yoga"
+      "class_name": "Aerial Yoga",
+      "rating": 3,
+      "seat": 48
     },
     {
       "_id": "3d4e5f6a7b8c9d0e1f2a3b4",
@@ -120,7 +141,9 @@
       "class_number": 4,
       "students_enrolled": 22,
       "category": "medium",
-      "class_name": "CrossFit"
+      "class_name": "CrossFit",
+      "rating": 4,
+      "seat": 50
     },
     {
       "_id": "5a6b7c8d9e0f1a2b3c4d5e6",
@@ -131,7 +154,9 @@
       "class_number": 6,
       "students_enrolled": 26,
       "category": "normal",
-      "class_name": "Piloxing"
+      "class_name": "Piloxing",
+      "rating": 4.2,
+      "seat": 36
     },
     {
       "_id": "7b8c9d0e1f2a3b4c5d6e7f8",
@@ -142,7 +167,9 @@
       "class_number": 5,
       "students_enrolled": 4,
       "category": "ok",
-      "class_name": "Body Pump"
+      "class_name": "Body Pump",
+      "rating": 4,
+      "seat": 59
     },
     {
       "_id": "9c0d1e2f3a4b5c6d7e8f9a0",
@@ -153,7 +180,9 @@
       "class_number": 6,
       "students_enrolled": 18,
       "category": "normal",
-      "class_name": "Boxing"
+      "class_name": "Boxing",
+      "rating": 3.7,
+      "seat": 55
     },
     {
       "_id": "1e2f3a4b5c6d7e8f9a0b1c2",
@@ -164,7 +193,9 @@
       "class_number": 3,
       "students_enrolled": 25,
       "category": "medium",
-      "class_name": "Zumba Toning"
+      "class_name": "Zumba Toning",
+      "rating": 4.1,
+      "seat": 0
     },
     {
       "_id": "3a4b5c6d7e8f9a0b1c2d3e4",
@@ -175,7 +206,9 @@
       "class_number": 7,
       "students_enrolled": 8,
       "category": "ok",
-      "class_name": "Hiking hills"
+      "class_name": "Hiking hills",
+      "rating": 3.5,
+      "seat": 58
     },
     {
       "_id": "5c6e7e8f9a0b1c2d3e4f5a6",
@@ -186,7 +219,9 @@
       "class_number": 4,
       "students_enrolled": 42,
       "category": "popular",
-      "class_name": "Dance Fitness"
+      "class_name": "Dance Fitness",
+      "rating": 4.6,
+      "seat": 0
     },
     {
       "_id": "7d8e9f0a1b2c3d4e5f6a7b8",
@@ -197,7 +232,9 @@
       "class_number": 6,
       "students_enrolled": 6,
       "category": "ok",
-      "class_name": "Heavy Fitness"
+      "class_name": "Heavy Fitness",
+      "rating": 3.6,
+      "seat": 51
     },
     {
       "_id": "9e0f1a2b3c4d5e6f7a8b9c0",
@@ -208,7 +245,9 @@
       "class_number": 5,
       "students_enrolled": 54,
       "category": "popular",
-      "class_name": "HIIT Workout"
+      "class_name": "HIIT Workout",
+      "rating": 5,
+      "seat": 0
     },
     {
       "_id": "9e0f1a2b3c4d5e9f7a8b9z0",
@@ -219,7 +258,9 @@
       "class_number": 5,
       "students_enrolled": 74,
       "category": "popular",
-      "class_name": "Vinyasa Yoga"
+      "class_name": "Vinyasa Yoga",
+      "rating": 5,
+      "seat": 0
     },
     {
       "_id": "1a2b3c4d5e6f7a8b9c0d1e2",
@@ -230,7 +271,9 @@
       "class_number": 6,
       "students_enrolled": 7,
       "category": "ok",
-      "class_name": "Supper Diet"
+      "class_name": "Supper Diet",
+      "rating": 3.4,
+      "seat": 60
     },
     {
       "_id": "3b4c5d6e7f8a9b0c1d2e3f4",
@@ -241,7 +284,9 @@
       "class_number": 3,
       "students_enrolled": 27,
       "category": "medium",
-      "class_name": "Strength Management"
+      "class_name": "Strength Management",
+      "rating": 3.7,
+      "seat": 72
     },
     {
       "_id": "5c6d7e8f9a0b1c2d3e4f5a6",
@@ -252,7 +297,9 @@
       "class_number": 7,
       "students_enrolled": 3,
       "category": "ok",
-      "class_name": "Athletic Functions"
+      "class_name": "Athletic Functions",
+      "rating": 4,
+      "seat": 81
     }
   ]
   
