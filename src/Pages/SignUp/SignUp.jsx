@@ -16,26 +16,26 @@ const SignUp = () => {
     const onSubmit = data => {
         console.log(data);
         createUser(data.email, data.password)
-            .then(result => {
-                const loggedUser = result.user;
+            .then(res => {
+                const loggedUser = res.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('user profile info updated')
+                        console.log('user profile updated');
                         reset();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'User Logged in successfully',
+                            title: 'User created Successfully',
                             showConfirmButton: false,
                             timer: 1500
                         });
                         navigate('/')
+
                     })
                     .catch(error => console.log(error))
-
-            })
-    }
+    })
+}
 
 
     // console.log(watch("example"));
