@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import loginImg from '../../../src/assets/login_anime_up.png'
 import { FaCheckSquare } from 'react-icons/fa';
+import { AuthContext } from '../../Providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const { signIn } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -11,6 +14,11 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
     }
 
     return (
@@ -44,8 +52,8 @@ const Login = () => {
 
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
-
                     </form>
+                    <p><small>New Here? Create an account Click  <Link to='/signup'>here!</Link></small></p>
                 </div>
             </div>
         </div>
