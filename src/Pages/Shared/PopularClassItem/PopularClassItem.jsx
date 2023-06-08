@@ -9,9 +9,9 @@ const PopularClassItem = ({ item }) => {
                 <h2 className="card-title">{class_name}</h2>
                 <p>Student Enrolled: {students_enrolled}</p>
                 <p>Instructors Name: {name}</p>
-                <div className="card-actions justify-end">
+                {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary">Buy Now</button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
