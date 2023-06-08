@@ -15,6 +15,7 @@ const Home = () => {
             <Helmet>
                 <title>Summer Camp || Home</title>
             </Helmet>
+            
            <Banner></Banner>
            <Category></Category>
            <PopularMenu></PopularMenu>
