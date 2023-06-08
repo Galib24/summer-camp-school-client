@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const navOptions = <>
-      
-                    <li><Link className="text-purple-300" to='/'>Home</Link></li>
-                    <li><Link className="text-purple-300" to='/instructors'>Instructors</Link></li>
-                    <li><Link className="text-purple-300" to='/classes'>Classes</Link></li>
-                   
-        
-       
+
+        <li><Link className="text-purple-300" to='/'>Home</Link></li>
+        <li><Link className="text-purple-300" to='/instructors'>Instructors</Link></li>
+        <li><Link className="text-purple-300" to='/classes'>Classes</Link></li>
+
+
+
     </>
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-50 bg-black text-white ">
+            <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,8 +31,10 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                   <button className="btn btn-ghost  bg-purple-400 btn-sm">Log Out</button>
                 </div>
+
+                
             </div>
         </>
     );

@@ -5,8 +5,11 @@ import useInstructors from "../../../../hooks/useInstructors";
 
 
 
+
 const Classes = () => {
     const [classes] = useInstructors();
+    
+   
     // const [classes, setClasses] = useState([]);
     // // useEffect(() => {
     // //     fetch('/instructor.json')
@@ -22,6 +25,9 @@ const Classes = () => {
             <Helmet>
                 <title>Summer Camp || Classes</title>
             </Helmet>
+
+
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-24 ml-10  mb-28">
                 {
                     classes.map(Ct => <ClassCard
