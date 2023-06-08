@@ -9,8 +9,8 @@ const NavBar = () => {
     // logout
     const handleLogOut = () => {
         logOut()
-        .then(()=> {})
-        .catch(error => console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
 
     const navOptions = <>
@@ -18,7 +18,6 @@ const NavBar = () => {
         <li><Link className="text-purple-300" to='/'>Home</Link></li>
         <li><Link className="text-purple-300" to='/instructors'>Instructors</Link></li>
         <li><Link className="text-purple-300" to='/classes'>Classes</Link></li>
-        <li><Link className="text-purple-300" to='/login'>login</Link></li>
         <li><Link className="text-purple-300" to='/blogs'>Blogs</Link></li>
 
 
@@ -47,17 +46,19 @@ const NavBar = () => {
                    <button className="btn btn-ghost normal-case  bg-purple-400 btn-sm">Logout</button>
                 </div> */}
 
-          <div className="navbar-end">
-          {
-                    user ? <>
+                <div className="navbar-end">
+                    {
+                        user ? <>
+                            <p className="mr-6 font-bold">{user?.displayName}</p>
+                            <img className="rounded-full mr-7" width={50} src={user?.photoURL} alt="" />
 
-                        <button onClick={handleLogOut} className="normal-case btn-ghost  bg-purple-400 btn-md rounded-2xl">LogOut</button>
+                            <button onClick={handleLogOut} className="normal-case btn-ghost mr-5 bg-purple-400 btn-md rounded-2xl">LogOut</button>
 
-                    </> : <>
-                        <Link className="normal-case btn-ghost text-center  bg-purple-400 btn-md rounded-2xl" to='/login'>Login</Link>
-                    </>
-                }
-          </div>
+                        </> : <>
+                            <Link className="normal-case btn-ghost text-center  bg-purple-400 btn-md rounded-2xl" to='/login'>Login</Link>
+                        </>
+                    }
+                </div>
 
 
             </div>
