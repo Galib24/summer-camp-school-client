@@ -7,6 +7,8 @@ import Instructors from "../Pages/Home/Home/Instructors/Instructors";
 import Classes from "../Pages/Home/Home/Classes/Classes";
 import Login from "../Pages/login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import Blogs from "../Pages/Shared/Blogs/Blogs";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -34,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: 'signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: 'blogs',
+                element: <PrivateRoute><Blogs></Blogs></PrivateRoute>
             }
         ]
     },
