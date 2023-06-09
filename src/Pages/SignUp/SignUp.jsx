@@ -12,30 +12,44 @@ const SignUp = () => {
     const navigate = useNavigate();
 
 
-    
+
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         createUser(data.email, data.password)
             .then(res => {
                 const loggedUser = res.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('user profile updated');
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User created Successfully',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/')
+                        // console.log('user profile updated');
+                        const saveStudent = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveStudent)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/')
+                                }
+                            })
+
 
                     })
                     .catch(error => console.log(error))
-    })
-}
+            })
+    }
 
 
     // console.log(watch("example"));
