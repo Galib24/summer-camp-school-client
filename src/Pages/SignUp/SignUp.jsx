@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -12,13 +12,29 @@ const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
-
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const onSubmit = data => {
+
+        if (data.password !== confirmPassword) {
+            Swal.fire({
+                title: 'Password do not matched',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
+            return;
+        }
+
+
         // console.log(data);
         createUser(data.email, data.password)
             .then(res => {
                 const loggedUser = res.user;
+                console.log(loggedUser);
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
@@ -125,7 +141,18 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have special character and at least one upper case</p>}
                                 {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than characters</p>}
-                              
+
+                                <label className="label mt-2">
+                                    <span className="label-text">Confirm Password</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    placeholder="confirm password"
+                                    className="input input-bordered"
+                                    required
+                                ></input>
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
