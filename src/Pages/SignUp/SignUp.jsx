@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -49,6 +50,8 @@ const SignUp = () => {
                     })
                     .catch(error => console.log(error))
             })
+
+
     }
 
 
@@ -122,15 +125,15 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have special character and at least one upper case</p>}
                                 {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than characters</p>}
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                              
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
 
                             </div>
                         </form>
+                        <p className='text-center mb-5'><small>Already Have an account? Click <Link className='text-blue-600' to='/signup'>here!</Link> to Login</small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

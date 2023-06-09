@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 
 
@@ -11,6 +11,9 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    // google function
+    const googleProvider = new GoogleAuthProvider();
 
 
     // create user
@@ -24,6 +27,12 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    // google sin in
+    const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
     // signOut
     const logOut = () => {
         setLoading(true);
@@ -31,12 +40,12 @@ const AuthProvider = ({ children }) => {
     }
 
     // update user 
-const updateUserProfile = (name, photo) => {
-  return  updateProfile(auth.currentUser, {
-        displayName:name,
-        photoURL: photo,
-    })
-}
+    const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo,
+        })
+    }
 
 
 
@@ -59,7 +68,8 @@ const updateUserProfile = (name, photo) => {
         createUser,
         signIn,
         logOut,
-        updateUserProfile
+        updateUserProfile,
+        googleSignIn
     }
 
     return (
