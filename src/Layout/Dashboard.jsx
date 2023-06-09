@@ -1,9 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
+import { FaWallet, FaUsers, FaFileUpload,FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
 import useEnrolled from "../hooks/useEnrolled";
 
 const Dashboard = () => {
     const [enroll] = useEnrolled();
+
+    // todo load data  from the server to have dynamic isAdmin based on data
+    const isAdmin = true;
+
+
+
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -16,15 +22,36 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4  w-80 h-full  ">
                     {/* Sidebar content here */}
-                    <li><NavLink to='/dashboard/home'><FaHome></FaHome> User Home</NavLink></li>
-                    <li><NavLink><FaCalendar></FaCalendar> User Reservation</NavLink></li>
-                    <li><NavLink><FaWallet></FaWallet>payment History</NavLink></li>
-                    <li>
-                        <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>My Item
-                        <span className="badge badge-error">+{enroll?.length || 0}</span>
-                        </NavLink>
-                       
-                    </li>
+
+                    {/* admin part */}
+
+                    {
+                        isAdmin ? <>
+
+                            <li><NavLink to='/dashboard/home'><FaHome></FaHome> Admin Home</NavLink></li>
+                            <li><NavLink to='/dashboard/manageclasses'><FaFileUpload></FaFileUpload>Manage Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/manageusers'><FaUsers></FaUsers> Manage Users</NavLink></li>
+                            {/* <li>
+                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>Admin Book marked Items
+                                    <span className="badge badge-error">+{enroll?.length || 0}</span>
+                                </NavLink>
+                            </li> */}
+
+                        </> : <>
+                            <li><NavLink to='/dashboard/home'><FaHome></FaHome> User Home</NavLink></li>
+                            <li><NavLink><FaCalendar></FaCalendar> User Reservation</NavLink></li>
+                            <li><NavLink><FaWallet></FaWallet>payment History</NavLink></li>
+                            <li>
+                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>My Item
+                                    <span className="badge badge-error">+{enroll?.length || 0}</span>
+                                </NavLink>
+                            </li>
+
+                        </>
+                    }
+
+
+
 
                     <div className="divider"></div>
                     <li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
