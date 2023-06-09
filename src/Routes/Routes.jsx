@@ -9,6 +9,8 @@ import Login from "../Pages/login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Blogs from "../Pages/Shared/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import MyItem from "../Pages/DashboardSection/MyItem/MyItem";
 
 
 
@@ -43,4 +45,14 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'myitem',
+                element: <MyItem></MyItem>
+            }
+        ]
+    }
 ])

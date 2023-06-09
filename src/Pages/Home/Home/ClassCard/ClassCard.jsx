@@ -15,7 +15,7 @@ const ClassCard = ({ item }) => {
     const handleAddToCart = item => {
         console.log(item);
         if (user && user?.email) {
-            const enrolledItem = { itemId: _id, price, email: user.email, name, rating, seat, students_enrolled, class_name, class_number }
+            const enrolledItem = { itemId: _id, price,image, email: user.email, name, rating, seat, students_enrolled, class_name, class_number }
             fetch('http://localhost:5000/enrolled', {
                 method: 'POST',
                 headers: {

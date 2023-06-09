@@ -52,7 +52,7 @@ const NavBar = () => {
 
                     <div className="mr-8">
                         <li>
-                            <Link>
+                            <Link to='/dashboard/myitem'>
                                 <button className="btn">
                                     <FaBox></FaBox>
                                     <div className="badge badge-error">+{enroll?.length || 0}</div>

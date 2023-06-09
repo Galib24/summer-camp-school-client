@@ -6,3 +6,10 @@
     display:flex !important;
     justify-content: center !important;
     }
+
+    .drawer-side a.active {
+        color: black;
+    }
+    .drawer-side a {
+        background-color: transparent;
+    }
