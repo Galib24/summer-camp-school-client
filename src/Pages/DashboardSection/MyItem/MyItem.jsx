@@ -1,14 +1,46 @@
 import { Helmet } from "react-helmet-async";
 import useEnrolled from "../../../hooks/useEnrolled";
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from "sweetalert2";
 
 
 const MyItem = () => {
-    const [enroll] = useEnrolled();
+    const [enroll, refetch] = useEnrolled();
     console.log(enroll);
     const total = enroll.reduce((sum, item) => item.price + sum, 0);
+
+
+    // delete method from database
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/enrolled/${item._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
     return (
-        <div className="w-full"> 
+        <div className="w-full">
             <Helmet>
                 <title>
                     summer Camp || My Items
@@ -32,39 +64,39 @@ const MyItem = () => {
                             <th>Class Number</th>
                             <th>Student Enrolled</th>
                             <th>Delete</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            enroll.map((item, index )=>    <tr
-                            key={item._id}
+                            enroll.map((item, index) => <tr
+                                key={item._id}
                             >
                                 <td>
-                                  {index + 1}
+                                    {index + 1}
                                 </td>
                                 <td>
-                                    
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
+
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
+                                            <img src={item.image} alt="Avatar Tailwind CSS Component" />
                                         </div>
-                                    
+                                    </div>
+
                                 </td>
                                 <td>{item.name}</td>
                                 <td>
-                                   {item.class_name}
+                                    {item.class_name}
                                 </td>
                                 <td>${item.price}</td>
                                 <td className="text-center">{item.class_number}</td>
                                 <td className="text-center">{item.students_enrolled}</td>
                                 <td>
-                                    <button className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
+                                    <button onClick={() => handleDelete(item)} className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>)
                         }
-                     
+
                     </tbody>
                 </table>
             </div>

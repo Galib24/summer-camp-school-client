@@ -50,7 +50,7 @@ const NavBar = () => {
                 <div className="navbar-end">
 
 
-                    <div className="mr-8">
+                    <div className="mr-8 inline-block">
                         <li>
                             <Link to='/dashboard/myitem'>
                                 <button className="btn">
