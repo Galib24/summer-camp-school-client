@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaBox } from 'react-icons/fa';
+import useEnrolled from "../../../hooks/useEnrolled";
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [enroll] = useEnrolled();
 
     // logout
     const handleLogOut = () => {
@@ -52,8 +54,8 @@ const NavBar = () => {
                         <li>
                             <Link>
                                 <button className="btn">
-                                  <FaBox></FaBox>
-                                    <div className="badge badge-error">+99</div>
+                                    <FaBox></FaBox>
+                                    <div className="badge badge-error">+{enroll?.length || 0}</div>
                                 </button>
                             </Link>
                         </li>

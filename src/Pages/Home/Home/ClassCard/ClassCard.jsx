@@ -3,17 +3,19 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useEnrolled from "../../../../hooks/useEnrolled";
 
 const ClassCard = ({ item }) => {
-    const {price, class_name, class_number, name, rating, seat, students_enrolled, image, _id } = item;
+    const { price, class_name, class_number, name, rating, seat, students_enrolled, image, _id } = item;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [, refetch] = useEnrolled();
 
     const handleAddToCart = item => {
         console.log(item);
         if (user && user?.email) {
-            const enrolledItem = { itemId: _id,price, name, rating, seat, students_enrolled, class_name, class_number }
+            const enrolledItem = { itemId: _id, price, email: user.email, name, rating, seat, students_enrolled, class_name, class_number }
             fetch('http://localhost:5000/enrolled', {
                 method: 'POST',
                 headers: {
@@ -24,6 +26,7 @@ const ClassCard = ({ item }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
