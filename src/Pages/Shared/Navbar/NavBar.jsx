@@ -63,8 +63,8 @@ const NavBar = () => {
 
                     {
                         user ? <>
-                            <p className="mr-6 font-bold">{user?.displayName}</p>
-                            <img className="rounded-full mr-7" width={50} src={user?.photoURL} alt="" />
+                            <p  className="mr-6 font-bold">{user?.displayName}</p>
+                            <img referrerPolicy="no-referrer" className="rounded-full mr-7" width={50} src={user?.photoURL} alt="" />
 
                             <button onClick={handleLogOut} className="normal-case btn-ghost mr-5 bg-purple-400 btn-md rounded-2xl">LogOut</button>
 

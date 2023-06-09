@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const [error, setError] = useState('')
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -36,6 +37,7 @@ const Login = () => {
 
 
             })
+            .catch(error => setError(error))
     }
 
     return (
@@ -69,12 +71,15 @@ const Login = () => {
                                         }
                                     </small></p>
                             </div>
+                            {
+                                error ? <p className='text-red-500'>Password or User Email not Matched</p> : ''
+                            }
                             <div className="form-control mt-6">
 
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p><small>New Here? Create an account Click  <Link to='/signup'>here!</Link></small></p>
+                        <p className='text-center mb-5'><small>New Here? Create an account Click  <Link className='text-blue-600' to='/signup'>here!</Link></small></p>
                     </div>
                 </div>
             </div>
