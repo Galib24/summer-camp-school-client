@@ -63,6 +63,9 @@ const MyItem = () => {
                             <th>Price</th>
                             <th>Class Number</th>
                             <th>Student Enrolled</th>
+                            <th>
+                                payment
+                            </th>
                             <th>Delete</th>
 
                         </tr>
@@ -91,6 +94,9 @@ const MyItem = () => {
                                 <td>${item.price}</td>
                                 <td className="text-center">{item.class_number}</td>
                                 <td className="text-center">{item.students_enrolled}</td>
+                                <td>
+                                    <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
+                                </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
                                 </td>

@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaUsers, FaFileUpload,FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
+import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
 import useEnrolled from "../hooks/useEnrolled";
 
 const Dashboard = () => {
@@ -7,6 +7,7 @@ const Dashboard = () => {
 
     // todo load data  from the server to have dynamic isAdmin based on data
     const isAdmin = true;
+    const isInstructor = false;
 
 
 
@@ -25,6 +26,8 @@ const Dashboard = () => {
 
                     {/* admin part */}
 
+                    {/* Admin? <></> : instructor? <></> : <></>
+ */}
                     {
                         isAdmin ? <>
 
@@ -37,6 +40,15 @@ const Dashboard = () => {
                                 </NavLink>
                             </li> */}
 
+                        </> : isInstructor ? <>
+                            <li><NavLink to='/dashboard/instructorhome'><FaHome></FaHome> Instructor Home</NavLink></li>
+                            <li><NavLink to='/dashboard/updateclasses'><FaFileUpload></FaFileUpload>Update Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/sendfeedback'><FaUsers></FaUsers> Send Feedback</NavLink></li>
+                            {/* <li>
+                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>Admin Book marked Items
+                                    <span className="badge badge-error">+{enroll?.length || 0}</span>
+                                </NavLink>
+                            </li> */}
                         </> : <>
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> User Home</NavLink></li>
                             <li><NavLink><FaCalendar></FaCalendar> User Reservation</NavLink></li>
