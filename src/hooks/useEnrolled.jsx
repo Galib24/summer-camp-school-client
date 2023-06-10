@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
-import { useContext } from 'react';
-import { AuthContext } from '../Providers/AuthProvider';
+
+import useAuth from './useAuth';
 
 
 const useEnrolled = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = useAuth();
 
 
     const { refetch, data: enroll = [] } = useQuery({
