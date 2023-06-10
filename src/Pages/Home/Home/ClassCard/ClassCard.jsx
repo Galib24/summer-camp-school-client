@@ -72,13 +72,15 @@ const ClassCard = ({ item }) => {
             >
 
             </motion.div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className={"card w-96 bg-base-100 shadow-xl  " + (seat === 0 ? 'bg-red-300' : '')}>
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{class_name}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className={"card-title"} >Class name: {class_name}</h2>
+                    <p>Instructor Name: {name}</p>
+                    <p>Available seats: {seat}</p>
+                    <p>Price: {price}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
+                        <button disabled={seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
                     </div>
                 </div>
             </div>
