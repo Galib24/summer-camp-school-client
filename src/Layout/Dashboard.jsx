@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
 import useEnrolled from "../hooks/useEnrolled";
 import useAdmin from "../hooks/useAdmin";
+import useCoInstructor from "../hooks/useCoInstructor";
 
 const Dashboard = () => {
     const [enroll] = useEnrolled();
@@ -9,9 +10,9 @@ const Dashboard = () => {
     // todo load data  from the server to have dynamic isAdmin based on data
     // const isAdmin = true;
     const [isAdmin] = useAdmin();
-    const isInstructor = false;
+    const [isInstructor] = useCoInstructor();
 
-
+    // console.log(isInstructor);
 
     return (
         <div className="drawer lg:drawer-open">
@@ -31,7 +32,7 @@ const Dashboard = () => {
                     {/* Admin? <></> : instructor? <></> : <></>
  */}
                     {
-                        isAdmin  ? <>
+                        isAdmin ? <>
 
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/manageclasses'><FaFileUpload></FaFileUpload>Manage Classes</NavLink></li>
@@ -44,7 +45,7 @@ const Dashboard = () => {
 
                         </> : isInstructor ? <>
                             <li><NavLink to='/dashboard/instructorhome'><FaHome></FaHome> Instructor Home</NavLink></li>
-                            <li><NavLink to='/dashboard/updateclasses'><FaFileUpload></FaFileUpload>Update Classes</NavLink></li>
+                            <li><NavLink to='/dashboard/addedclasses'><FaFileUpload></FaFileUpload>Added Classes</NavLink></li>
                             <li><NavLink to='/dashboard/sendfeedback'><FaUsers></FaUsers> Send Feedback</NavLink></li>
                             {/* <li>
                                 <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>Admin Book marked Items
