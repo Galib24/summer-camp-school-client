@@ -3,14 +3,18 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../../hooks/useaxiosSecure";
+// import useAxiosSecure from "../../../hooks/useaxiosSecure";
 
 
 const ManageUsers = () => {
-    const [axiosSecure] = useAxiosSecure();
+    const token = localStorage.getItem('access-token');
+    // const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await axiosSecure.get('/users')
-        return res.data.admin;
+        const res = await fetch('http://localhost:5000/users',{
+            headers: {
+                authorization: `bearer ${token}`
+            }})
+        return res.json();
     });
 
     // making admin method
