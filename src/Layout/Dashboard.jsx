@@ -1,12 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
 import useEnrolled from "../hooks/useEnrolled";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [enroll] = useEnrolled();
 
     // todo load data  from the server to have dynamic isAdmin based on data
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin();
     const isInstructor = false;
 
 
@@ -29,7 +31,7 @@ const Dashboard = () => {
                     {/* Admin? <></> : instructor? <></> : <></>
  */}
                     {
-                        isAdmin ? <>
+                        isAdmin  ? <>
 
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/manageclasses'><FaFileUpload></FaFileUpload>Manage Classes</NavLink></li>

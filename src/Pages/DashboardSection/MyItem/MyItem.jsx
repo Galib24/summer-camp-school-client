@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
-    console.log(enroll);
+    // console.log(enroll);
     const total = enroll.reduce((sum, item) => item.price + sum, 0);
 
 
