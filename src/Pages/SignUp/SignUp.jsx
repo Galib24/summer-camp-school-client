@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import loginImg from '../../../src/assets/login_anime_up.png'
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -79,9 +80,9 @@ const SignUp = () => {
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <div className="ml-10 flex">
+                        <img style={{ borderRadius: '400px 400px 0 0' }} className='w-1/2 rounded-2xl' src={loginImg} alt="" />
+                        <h1 className="text-5xl font-bold text-white">Sign Up!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -159,9 +160,9 @@ const SignUp = () => {
 
                             </div>
                             {/* <p>This email already used in</p> */}
-                        
+
                         </form>
-                        <p className='text-center mb-5'><small>Already Have an account? Click <Link className='text-blue-600' to='/signup'>here!</Link> to Login</small></p>
+                        <p className='text-center mb-5'><small>Already Have an account? Click <Link className='text-blue-600' to='/login'>here!</Link> to Login</small></p>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>

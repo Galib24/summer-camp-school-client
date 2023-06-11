@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
     const [isAdmin] = useAdmin();
+    // const [instructors] = useInstructorClass
     // console.log(enroll);
     const total = enroll.reduce((sum, item) => item.price + sum, 0);
     const [instructorsClass] = useInstructorClass();
@@ -131,6 +132,7 @@ const MyItem = () => {
                         instructorClass={instructorClass}
                     ></InsTructorClassCard>) : ''
                 }
+                
             </div>
         </div>
     );

@@ -15,9 +15,9 @@ export default {
 
           "accent": "#b994dd",
 
-          "neutral": "#212835",
+          "dark": "#212835",
 
-          "base-100": "#E6EAEF",
+          "light": "#E6EAEF",
 
           "info": "#528AE5",
 
@@ -35,5 +35,8 @@ export default {
     ],
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark" ]
+  },
 }
 
