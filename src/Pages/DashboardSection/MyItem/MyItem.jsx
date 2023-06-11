@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
+    
     const [isAdmin] = useAdmin();
     // const [instructors] = useInstructorClass
     // console.log(enroll);
@@ -46,6 +47,7 @@ const MyItem = () => {
     }
     return (
         <div className="w-full">
+            
             <Helmet>
                 <title>
                     summer Camp || My Items
@@ -87,6 +89,7 @@ const MyItem = () => {
                         </>
                     }
                     <tbody>
+                        
                         {
                             enroll.map((item, index) => <tr
                                 key={item._id}
@@ -103,10 +106,8 @@ const MyItem = () => {
                                     </div>
 
                                 </td>
+                                <td>  {item.class_name} </td>
                                 <td>{item.name}</td>
-                                <td>
-                                    {item.class_name}
-                                </td>
                                 <td>${item.price}</td>
                                 <td className="text-center">{item.class_number}</td>
                                 <td className="text-center">{item.students_enrolled}</td>
@@ -134,6 +135,7 @@ const MyItem = () => {
                 }
                 
             </div>
+          
         </div>
     );
 };

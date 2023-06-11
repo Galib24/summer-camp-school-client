@@ -15,6 +15,6 @@ const useAdmin = () =>{
         
     })
     // console.log(isAdmin);
-    return[isAdmin, isAdminLoading]
+    return[isAdmin,isAdminLoading]
 }
 export default useAdmin;
