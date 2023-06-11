@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
 
+
     const [isAdmin] = useAdmin();
     // const [instructors] = useInstructorClass
     // console.log(enroll);
@@ -46,6 +47,8 @@ const MyItem = () => {
             }
         })
     }
+
+    // console.log(enroll[0]._id);
     return (
         <div className="w-full">
 
@@ -60,8 +63,10 @@ const MyItem = () => {
                     <div className="uppercase font-semibold h-[70px]  flex justify-evenly items-center">
                         <h3 className="text-3xl">Total Items: {enroll.length}</h3>
                         <h3 className="text-3xl">Total Price: ${total}</h3>
-                        {/* TODO */}
-                        <button className="btn text-white bg-success btn-ghost btn-md">Pay All</button>
+                       
+                        <Link to='/dashboard/payment'>
+                            <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
+                        </Link>
                     </div>
                 </>
             }
@@ -80,9 +85,6 @@ const MyItem = () => {
                                     <th>Price</th>
                                     <th>Class Number</th>
                                     <th>Student Enrolled</th>
-                                    <th>
-                                        payment
-                                    </th>
                                     <th>Delete</th>
 
                                 </tr>
@@ -113,11 +115,11 @@ const MyItem = () => {
                                 <td>${item.price}</td>
                                 <td className="text-center">{item.class_number}</td>
                                 <td className="text-center">{item.students_enrolled}</td>
-                                <td>
+                                {/* <td>
                                     <Link to='/dashboard/payment'>
                                         <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
                                     </Link>
-                                </td>
+                                </td> */}
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
