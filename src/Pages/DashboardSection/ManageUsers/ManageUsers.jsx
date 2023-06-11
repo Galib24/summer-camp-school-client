@@ -3,10 +3,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
+// import useUser from "../../../hooks/useUser";
 // import useAxiosSecure from "../../../hooks/useaxiosSecure";
 
 
 const ManageUsers = () => {
+    // const [DataUser] = useUser();
     const token = localStorage.getItem('access-token');
     // const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
@@ -56,19 +58,51 @@ const ManageUsers = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    .then((result) =>{
+                        
+                    })
 
                 }
             })
     }
 
 
-
+// TODO then deleted function do
     // delete user
     const handleDelete = user => {
-
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        .then((result)=>{
+            if(result.isConfirmed){
+                fetch(`http://localhost:5000/users/${user._id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                      console.log(data);
+                      refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        
+                    }
+                })
+            }
+            
+        })
     }
 
-
+// console.log(DataUser);
     return (
         <div className="w-full">
             <Helmet>
