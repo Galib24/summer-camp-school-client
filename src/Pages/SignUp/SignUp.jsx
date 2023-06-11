@@ -158,6 +158,8 @@ const SignUp = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
 
                             </div>
+                            <p>This email already used in</p>
+                        
                         </form>
                         <p className='text-center mb-5'><small>Already Have an account? Click <Link className='text-blue-600' to='/signup'>here!</Link> to Login</small></p>
                         <SocialLogin></SocialLogin>

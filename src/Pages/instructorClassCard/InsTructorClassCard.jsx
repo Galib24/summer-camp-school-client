@@ -12,8 +12,10 @@ const InsTructorClassCard = ({instructorClass}) => {
             <p>Available seats: {availableseat}</p>
             <p>Price: ${price}</p>
             <div className="card-actions justify-end">
-                {/* <button disabled={availableseat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button> */}
-            </div>
+                        <button   className="btn  border-pink-400 btn-outline border-b-4 btn-success text-black">Approve</button>
+                        <button   className="btn  border-pink-400 btn-outline border-b-4 btn-error">Deny </button>
+                        <button   className="btn  border-pink-400 btn-outline border-b-4 btn-info">feedback</button>
+                    </div>
         </div>
     </div>
     );

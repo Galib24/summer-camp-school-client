@@ -50,30 +50,41 @@ const MyItem = () => {
                     summer Camp || My Items
                 </title>
             </Helmet>
-            <div className="uppercase font-semibold h-[70px]  flex justify-evenly items-center">
+            {
+                isAdmin ? <><h1 className="text-4xl text-center font-bold">Hello admin</h1></> : <>
+                
+                <div className="uppercase font-semibold h-[70px]  flex justify-evenly items-center">
                 <h3 className="text-3xl">Total Items: {enroll.length}</h3>
                 <h3 className="text-3xl">Total Price: ${total}</h3>
                 <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
             </div>
+            </>
+            }
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Class Picture</th>
-                            <th>Class Name</th>
-                            <th>Class Instructor Name</th>
-                            <th>Price</th>
-                            <th>Class Number</th>
-                            <th>Student Enrolled</th>
-                            <th>
-                                payment
-                            </th>
-                            <th>Delete</th>
+                    {
+                        isAdmin ? <h2 className="text-2xl text-center font-semibold">Item Came from Instructor</h2> : <>
 
-                        </tr>
-                    </thead>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Class Picture</th>
+                                    <th>Class Name</th>
+                                    <th>Class Instructor Name</th>
+                                    <th>Price</th>
+                                    <th>Class Number</th>
+                                    <th>Student Enrolled</th>
+                                    <th>
+                                        payment
+                                    </th>
+                                    <th>Delete</th>
+
+                                </tr>
+                            </thead>
+
+                        </>
+                    }
                     <tbody>
                         {
                             enroll.map((item, index) => <tr
@@ -111,12 +122,16 @@ const MyItem = () => {
                 </table>
             </div>
 
-            {
-                isAdmin ? instructorsClass.map(instructorClass => <InsTructorClassCard
-                    key={instructorClass._id}
-                    instructorClass={instructorClass}
-                ></InsTructorClassCard>) : ''
-            }
+            {/* <h1 className="text-2xl text-center font-semibold">Item Came from Instructor</h1> */}
+
+            <div className="grid md:grid-cols-2 lg:grid-cols2 gap-5 ml-16 my-16">
+                {
+                    isAdmin ? instructorsClass.map(instructorClass => <InsTructorClassCard
+                        key={instructorClass._id}
+                        instructorClass={instructorClass}
+                    ></InsTructorClassCard>) : ''
+                }
+            </div>
         </div>
     );
 };

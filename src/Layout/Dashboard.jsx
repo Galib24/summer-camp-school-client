@@ -36,12 +36,15 @@ const Dashboard = () => {
 
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/manageclasses'><FaFileUpload></FaFileUpload>Manage Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/manageusers'><FaUsers></FaUsers> Manage Users</NavLink></li>
-                            {/* <li>
-                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>Admin Book marked Items
-                                    <span className="badge badge-error">+{enroll?.length || 0}</span>
+                            <li>
+                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>
+                                    Pending Item
+                                    {/* <span className="badge badge-error">+{enroll?.length || 0}</span> */}
                                 </NavLink>
-                            </li> */}
+                            </li>
+                            <li><NavLink to='/dashboard/manageusers'><FaUsers></FaUsers> Manage Users</NavLink></li>
+
+
 
                         </> : isInstructor ? <>
                             <li><NavLink to='/dashboard/instructorhome'><FaHome></FaHome> Instructor Home</NavLink></li>
