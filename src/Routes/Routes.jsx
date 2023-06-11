@@ -14,6 +14,8 @@ import MyItem from "../Pages/DashboardSection/MyItem/MyItem";
 import ManageUsers from "../Pages/DashboardSection/ManageUsers/ManageUsers";
 import ManageClasses from "../Pages/ManageClasses/ManageClasses";
 import AdminRoutes from "./AdminRoutes";
+import ManageClassesInstructor from "../Pages/ManageClassInstructor/ManageClassesInstructor";
+
 
 
 
@@ -58,11 +60,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageusers',
-                element: <ManageUsers></ManageUsers>
+                element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
             },
             {
                 path: 'manageclasses',
                 element: <AdminRoutes> <ManageClasses></ManageClasses></AdminRoutes>
+            },
+            {
+                path: 'addedclasses',
+                element: <ManageClassesInstructor></ManageClassesInstructor>
             }
         ]
     }

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FaBox } from 'react-icons/fa';
 import useEnrolled from "../../../hooks/useEnrolled";
+
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [enroll] = useEnrolled();
@@ -24,6 +25,7 @@ const NavBar = () => {
 
 
     </>
+    
     return (
         <>
             <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white ">
@@ -55,7 +57,7 @@ const NavBar = () => {
                             <Link to='/dashboard/myitem'>
                                 <button className="btn">
                                     <FaBox></FaBox>
-                                    <div className="badge badge-error">+{enroll?.length || 0}</div>
+                                    <div className="badge badge-error">{enroll?.length || 0}</div>
                                 </button>
                             </Link>
                         </li>

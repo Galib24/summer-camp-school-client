@@ -27,7 +27,7 @@ const useEnrolled = () => {
         queryFn: async () => {
             if (user?.email) {
                 const res = await axiosSecure.get(`/enrolled?email=${user?.email}`)
-                console.log('res from axios', res);
+                // console.log('res from axios', res);
                 return res.data;
             }
             return []

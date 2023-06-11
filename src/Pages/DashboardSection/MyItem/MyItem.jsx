@@ -1,14 +1,18 @@
 import { Helmet } from "react-helmet-async";
 import useEnrolled from "../../../hooks/useEnrolled";
+import useAdmin from "../../../hooks/useAdmin";
+import useInstructorClass from "../../../hooks/useInstructorClass";
+import InsTructorClassCard from "../../../Pages/instructorClassCard/InsTructorClassCard";
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from "sweetalert2";
 
 
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
+    const [isAdmin] = useAdmin();
     // console.log(enroll);
     const total = enroll.reduce((sum, item) => item.price + sum, 0);
-
+    const [instructorsClass] = useInstructorClass();
 
     // delete method from database
     const handleDelete = item => {
@@ -106,6 +110,13 @@ const MyItem = () => {
                     </tbody>
                 </table>
             </div>
+
+            {
+                isAdmin ? instructorsClass.map(instructorClass => <InsTructorClassCard
+                    key={instructorClass._id}
+                    instructorClass={instructorClass}
+                ></InsTructorClassCard>) : ''
+            }
         </div>
     );
 };

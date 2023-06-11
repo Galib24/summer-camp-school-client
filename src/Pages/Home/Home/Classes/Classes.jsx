@@ -6,8 +6,12 @@ import useInstructors from "../../../../hooks/useInstructors";
 
 
 
+
+
 const Classes = () => {
     const [classes] = useInstructors();
+
+    
     
    
     // const [classes, setClasses] = useState([]);
@@ -35,6 +39,12 @@ const Classes = () => {
                         item={item}
                     ></ClassCard>)
                 }
+                {/* {
+                    instructorsClass.map(instructorClass => <InsTructorClassCard
+                    key={instructorClass._id}
+                    instructorClass={instructorClass}
+                    ></InsTructorClassCard>)
+                } */}
             </div>
         </div>
     );
