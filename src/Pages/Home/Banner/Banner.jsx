@@ -11,26 +11,28 @@ import img5 from '../../../assets/bannerr6.jpg'
 
 const Banner = () => {
     return (
-        <Carousel  className="w-3/4 mx-auto" autoPlay>
-                <div>
-                    <img src={img0} />
-                </div>
-                <div>
-                    <img src={img1} />
-                </div>
-                <div>
-                    <img src={img2} />
-                </div>
-                <div>
-                    <img src={img3} />
-                </div>
-                <div>
-                    <img src={img4} />
-                </div>
-                <div>
-                    <img src={img5} />
-                </div>
-            </Carousel>
+        <Carousel
+            className="w-3/4 mx-auto"
+            autoPlay >
+            <div>
+                <img src={img0} />
+            </div>
+            <div>
+                <img src={img1} />
+            </div>
+            <div>
+                <img src={img2} />
+            </div>
+            <div>
+                <img src={img3} />
+            </div>
+            <div>
+                <img src={img4} />
+            </div>
+            <div>
+                <img src={img5} />
+            </div>
+        </Carousel>
     );
 };
 

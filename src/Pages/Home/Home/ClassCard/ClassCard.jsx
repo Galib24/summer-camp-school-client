@@ -4,8 +4,10 @@ import { AuthContext } from "../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useEnrolled from "../../../../hooks/useEnrolled";
+import useAdmin from "../../../../hooks/useAdmin";
 
 const ClassCard = ({ item }) => {
+    const [isAdmin] = useAdmin();
     const { price, class_name, class_number, name, rating, seat, students_enrolled, image, _id } = item;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -80,7 +82,7 @@ const ClassCard = ({ item }) => {
                     <p>Available seats: {seat}</p>
                     <p>Price: ${price}</p>
                     <div className="card-actions justify-end">
-                        <button disabled={seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
+                        <button disabled={isAdmin?'disabled': seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
                     </div>
                 </div>
             </div>
