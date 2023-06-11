@@ -84,7 +84,7 @@ const ClassCard = ({ item }) => {
                     <p>Available seats: {seat}</p>
                     <p>Price: ${price}</p>
                     <div className="card-actions justify-end">
-                        <button disabled={isAdmin?'disabled' : instructors? 'disabled' : seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
+                        <button disabled={isAdmin?'disabled' : seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
                     </div>
                 </div>
             </div>
