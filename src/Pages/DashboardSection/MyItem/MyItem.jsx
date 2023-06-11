@@ -5,11 +5,12 @@ import useInstructorClass from "../../../hooks/useInstructorClass";
 import InsTructorClassCard from "../../../Pages/instructorClassCard/InsTructorClassCard";
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyItem = () => {
     const [enroll, refetch] = useEnrolled();
-    
+
     const [isAdmin] = useAdmin();
     // const [instructors] = useInstructorClass
     // console.log(enroll);
@@ -47,7 +48,7 @@ const MyItem = () => {
     }
     return (
         <div className="w-full">
-            
+
             <Helmet>
                 <title>
                     summer Camp || My Items
@@ -55,13 +56,14 @@ const MyItem = () => {
             </Helmet>
             {
                 isAdmin ? <><h1 className="text-4xl text-center font-bold">Hello admin</h1></> : <>
-                
-                <div className="uppercase font-semibold h-[70px]  flex justify-evenly items-center">
-                <h3 className="text-3xl">Total Items: {enroll.length}</h3>
-                <h3 className="text-3xl">Total Price: ${total}</h3>
-                <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
-            </div>
-            </>
+
+                    <div className="uppercase font-semibold h-[70px]  flex justify-evenly items-center">
+                        <h3 className="text-3xl">Total Items: {enroll.length}</h3>
+                        <h3 className="text-3xl">Total Price: ${total}</h3>
+                        {/* TODO */}
+                        <button className="btn text-white bg-success btn-ghost btn-md">Pay All</button>
+                    </div>
+                </>
             }
             <div className="overflow-x-auto">
                 <table className="table">
@@ -89,7 +91,7 @@ const MyItem = () => {
                         </>
                     }
                     <tbody>
-                        
+
                         {
                             enroll.map((item, index) => <tr
                                 key={item._id}
@@ -112,7 +114,9 @@ const MyItem = () => {
                                 <td className="text-center">{item.class_number}</td>
                                 <td className="text-center">{item.students_enrolled}</td>
                                 <td>
-                                    <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
+                                    <Link to='/dashboard/payment'>
+                                        <button className="btn text-white bg-success btn-ghost btn-md">Pay</button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn text-red-500 btn-ghost btn-md"><FaTrashAlt></FaTrashAlt></button>
@@ -133,9 +137,9 @@ const MyItem = () => {
                         instructorClass={instructorClass}
                     ></InsTructorClassCard>) : ''
                 }
-                
+
             </div>
-          
+
         </div>
     );
 };
