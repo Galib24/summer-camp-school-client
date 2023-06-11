@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useaxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 
 
+
 const ChechkOutForm = ({ price, enroll }) => {
     const stripe = useStripe();
     const elements = useElements();
@@ -50,7 +51,7 @@ const ChechkOutForm = ({ price, enroll }) => {
         }
         else {
             setCardError('');
-            
+
         }
 
         setProcessing(true)
@@ -80,14 +81,14 @@ const ChechkOutForm = ({ price, enroll }) => {
 
 
 
-            
+
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
                 date: new Date(),
                 quantity: enroll.length,
-                cartItems: enroll.map(item => item._id),
+                enrollItems: enroll.map(item => item._id),
                 menuItems: enroll.map(item => item.menuItemId),
                 status: 'service pending',
                 itemNames: enroll.map(item => item.name)
@@ -96,7 +97,7 @@ const ChechkOutForm = ({ price, enroll }) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                        // display confirm
+                     alert('')
                     }
                 })
         }

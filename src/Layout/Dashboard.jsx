@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaCalendar, FaHome } from 'react-icons/fa';
+import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaHome } from 'react-icons/fa';
 import useEnrolled from "../hooks/useEnrolled";
 import useAdmin from "../hooks/useAdmin";
 import useCoInstructor from "../hooks/useCoInstructor";
@@ -56,11 +56,11 @@ const Dashboard = () => {
                                 </NavLink>
                             </li> */}
                         </> : <>
-                            <li><NavLink to='/dashboard/home'><FaHome></FaHome> User Home</NavLink></li>
-                            <li><NavLink><FaCalendar></FaCalendar> User Reservation</NavLink></li>
-                            <li><NavLink><FaWallet></FaWallet>payment History</NavLink></li>
+                            <li><NavLink to='/dashboard/user/home'><FaHome></FaHome> User Home</NavLink></li>
+                            {/* <li><NavLink > User Reservation</NavLink></li> */}
+                            <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>payment History</NavLink></li>
                             <li>
-                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>My Item
+                                <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>My Enrolled Classes
                                     <span className="badge badge-error">+{enroll?.length || 0}</span>
                                 </NavLink>
                             </li>
