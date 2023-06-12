@@ -3,9 +3,11 @@ import { FaWallet, FaUsers, FaFileUpload, FaBoxes, FaHome } from 'react-icons/fa
 import useEnrolled from "../hooks/useEnrolled";
 import useAdmin from "../hooks/useAdmin";
 import useCoInstructor from "../hooks/useCoInstructor";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
     const [enroll] = useEnrolled();
+    const {user} = useAuth();
 
     // todo load data  from the server to have dynamic isAdmin based on data
     // const isAdmin = true;
@@ -55,7 +57,7 @@ const Dashboard = () => {
                                     <span className="badge badge-error">+{enroll?.length || 0}</span>
                                 </NavLink>
                             </li> */}
-                        </> : <>
+                        </> : user?  <>
                             <li><NavLink to='/dashboard/userhome'><FaHome></FaHome> User Home</NavLink></li>
                             {/* <li><NavLink > User Reservation</NavLink></li> */}
                             <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>payment History</NavLink></li>
@@ -65,7 +67,7 @@ const Dashboard = () => {
                                 </NavLink>
                             </li>
 
-                        </>
+                        </> : ' '
                     }
 
 
