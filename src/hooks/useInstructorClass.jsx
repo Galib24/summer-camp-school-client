@@ -4,7 +4,7 @@ const useInstructorClass = () => {
     const [instructorsClass, setInstructorsClass] = useState([]);
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:5000/classItems')
+        fetch('https://summer-camp-fitness-school-server.vercel.app/classItems')
             .then(res => res.json())
             .then(data => {
                 setInstructorsClass(data)

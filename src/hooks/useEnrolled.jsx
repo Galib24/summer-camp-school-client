@@ -15,7 +15,7 @@ const useEnrolled = () => {
         queryKey: ['enrolled', user?.email],
         enabled: !loading,
         // queryFn: async () => {
-        //     const res = await fetch(`http://localhost:5000/enrolled?email=${user?.email}`,{
+        //     const res = await fetch(`https://summer-camp-fitness-school-server.vercel.app/enrolled?email=${user?.email}`,{
         //         headers: {
         //             authorization: `bearer ${token}`
 

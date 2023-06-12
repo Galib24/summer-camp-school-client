@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion, useScroll } from "framer-motion"
 import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
@@ -9,7 +10,7 @@ import useInstructors from "../../../../hooks/useInstructors";
 
 const ClassCard = ({ item }) => {
     const [isAdmin] = useAdmin();
-    const [instructors] = useInstructors();
+    // const [instructors] = useInstructors();
     const { price, class_name, class_number, name, rating, seat, students_enrolled, image, _id } = item;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ const ClassCard = ({ item }) => {
         console.log(item);
         if (user && user?.email) {
             const enrolledItem = { itemId: _id, price,image, email: user.email, name, rating, seat, students_enrolled, class_name, class_number }
-            fetch('http://localhost:5000/enrolled', {
+            fetch('https://summer-camp-fitness-school-server.vercel.app/enrolled', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -84,7 +85,7 @@ const ClassCard = ({ item }) => {
                     <p>Available seats: {seat}</p>
                     <p>Price: ${price}</p>
                     <div className="card-actions justify-end">
-                        <button disabled={isAdmin? 'disabled' : instructors ? 'disabled' : seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
+                        <button disabled={isAdmin? 'disabled' :seat === 0 ? 'disabled' : ''} onClick={() => handleAddToCart(item)} className="btn  border-pink-400 btn-outline border-b-4 btn-primary text-black">Enroll Now</button>
                     </div>
                 </div>
             </div>

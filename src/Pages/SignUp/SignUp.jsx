@@ -41,7 +41,7 @@ const SignUp = () => {
                     .then(() => {
                         // console.log('user profile updated');
                         const saveStudent = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://summer-camp-fitness-school-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

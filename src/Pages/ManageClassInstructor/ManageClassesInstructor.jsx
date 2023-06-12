@@ -20,7 +20,7 @@ const ManageClassesInstructor = () => {
 
 
         // send data to database
-        fetch('http://localhost:5000/classItems', {
+        fetch('https://summer-camp-fitness-school-server.vercel.app/classItems', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -30,7 +30,7 @@ const MyItem = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/enrolled/${item._id}`, {
+                fetch(`https://summer-camp-fitness-school-server.vercel.app/enrolled/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
