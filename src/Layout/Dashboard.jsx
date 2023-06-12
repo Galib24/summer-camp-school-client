@@ -56,7 +56,7 @@ const Dashboard = () => {
                                 </NavLink>
                             </li> */}
                         </> : <>
-                            <li><NavLink to='/dashboard/user/home'><FaHome></FaHome> User Home</NavLink></li>
+                            <li><NavLink to='/dashboard/userhome'><FaHome></FaHome> User Home</NavLink></li>
                             {/* <li><NavLink > User Reservation</NavLink></li> */}
                             <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>payment History</NavLink></li>
                             <li>

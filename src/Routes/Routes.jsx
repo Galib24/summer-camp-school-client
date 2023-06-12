@@ -18,6 +18,7 @@ import ManageClassesInstructor from "../Pages/ManageClassInstructor/ManageClasse
 import Payment from "../Pages/DashboardSection/Payment/Payment";
 import PaymentHistory from "../Pages/DashboardSection/Payment/Payment history/PaymentHistory";
 import UserHome from "../Pages/DashboardSection/UserHome/UserHome";
+import ErrorPage from "../Pages/Error/ErrorPage";
 
 
 
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -56,6 +58,7 @@ export const router = createBrowserRouter([
     {
         path: 'dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+       errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: 'userhome',
