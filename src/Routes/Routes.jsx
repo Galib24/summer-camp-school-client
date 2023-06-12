@@ -19,6 +19,8 @@ import Payment from "../Pages/DashboardSection/Payment/Payment";
 import PaymentHistory from "../Pages/DashboardSection/Payment/Payment history/PaymentHistory";
 import UserHome from "../Pages/DashboardSection/UserHome/UserHome";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import InstructorHome from "../Pages/DashboardSection/Instructor home/InstructorHome";
+import AdminHome from "../Pages/DashboardSection/Admin Home/AdminHome";
 
 
 
@@ -87,6 +89,14 @@ export const router = createBrowserRouter([
             {
                 path: 'history',
                 element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: 'instructorhome',
+                element: <InstructorHome></InstructorHome>
+            },
+            {
+                path: 'adminhome',
+                element: <AdminHome></AdminHome>
             }
         ]
     }

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useEnrolled from "../../../../hooks/useEnrolled";
 import useAdmin from "../../../../hooks/useAdmin";
+import { Rating } from '@smastrom/react-rating'
 import useInstructors from "../../../../hooks/useInstructors";
 
 const ClassCard = ({ item }) => {
@@ -81,6 +82,11 @@ const ClassCard = ({ item }) => {
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className={"card-title"} >Class name: {class_name}</h2>
+                    <Rating
+                                style={{ maxWidth: 100 }}
+                                value={rating}
+                                readOnly
+                            />
                     <p>Instructor Name: {name}</p>
                     <p>Available seats: {seat}</p>
                     <p>Price: ${price}</p>
