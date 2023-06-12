@@ -51,7 +51,7 @@ const Dashboard = () => {
                         </> : isInstructor ? <>
                             <li><NavLink to='/dashboard/instructorhome'><FaHome></FaHome> Instructor Home</NavLink></li>
                             <li><NavLink to='/dashboard/addedclasses'><FaFileUpload></FaFileUpload>Added Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/sendfeedback'><FaUsers></FaUsers> Send Feedback</NavLink></li>
+                            <li><NavLink to='/dashboard/myclassesinstructor'><FaUsers></FaUsers> My Classes </NavLink></li>
                             {/* <li>
                                 <NavLink to='/dashboard/myitem'><FaBoxes></FaBoxes>Admin Book marked Items
                                     <span className="badge badge-error">+{enroll?.length || 0}</span>

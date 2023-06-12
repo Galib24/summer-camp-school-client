@@ -21,6 +21,7 @@ import UserHome from "../Pages/DashboardSection/UserHome/UserHome";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import InstructorHome from "../Pages/DashboardSection/Instructor home/InstructorHome";
 import AdminHome from "../Pages/DashboardSection/Admin Home/AdminHome";
+import InstructorClass from "../Pages/DashboardSection/InstructorClass/InstructorClass";
 
 
 
@@ -97,6 +98,10 @@ export const router = createBrowserRouter([
             {
                 path: 'adminhome',
                 element: <AdminHome></AdminHome>
+            },
+            {
+                path: 'myclassesinstructor',
+                element: <InstructorClass></InstructorClass>
             }
         ]
     }
