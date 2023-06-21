@@ -1,5 +1,5 @@
 # Summer-camp-fitness-zone
-This is the site where we give service of fitness when kids or adults have vacation in summer time.
+This is the site where we give service of fitness when kids or adults have vacation in summer time. We make student happy and knowledgeable.
 
 ## statics
 Here also have an statics section of myself
